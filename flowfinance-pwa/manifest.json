@@ -1,0 +1,49 @@
+{
+  "name": "FlowFinance",
+  "short_name": "FlowFinance",
+  "description": "Tu asesor financiero personal con IA",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0D1A12",
+  "theme_color": "#00C87A",
+  "lang": "es-MX",
+  "categories": ["finance", "productivity"],
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Agregar gasto",
+      "short_name": "Gasto",
+      "description": "Registra un gasto rápido",
+      "url": "/?action=add-expense",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Hablar con asesor",
+      "short_name": "Asesor",
+      "description": "Abre el chat con FlowAdvisor",
+      "url": "/?action=advisor",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}
