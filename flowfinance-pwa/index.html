@@ -225,6 +225,84 @@ body{display:flex;justify-content:center;min-height:100vh;}
 .ios-guide-text{font-size:13px;color:#374151;line-height:1.5;padding-top:4px;}
 .ios-guide-text strong{color:#111827;}
 .ios-arrow{position:absolute;bottom:-10px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:12px solid transparent;border-right:12px solid transparent;border-top:12px solid #fff;}
+
+/* ── IMAGE SCAN ─────────────────────────────── */
+.scan-option{display:flex;flex-direction:column;align-items:center;gap:8px;flex:1;cursor:pointer;padding:16px 8px;border-radius:var(--rs);border:1.5px solid var(--T3);transition:all .18s;background:var(--bg);}
+.scan-option:hover,.scan-option.selected{border-color:var(--P);background:var(--Pl);}
+.scan-option-ico{font-size:28px;}
+.scan-option-lbl{font-size:13px;font-weight:700;color:var(--T);}
+.scan-option-sub{font-size:11px;color:var(--T2);text-align:center;line-height:1.4;}
+.img-preview-wrap{position:relative;border-radius:var(--rs);overflow:hidden;margin-bottom:14px;background:var(--bg);border:1.5px solid var(--T3);}
+.img-preview-wrap img{width:100%;max-height:260px;object-fit:contain;display:block;}
+.img-preview-badge{position:absolute;top:8px;right:8px;background:rgba(0,0,0,.6);color:#fff;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600;}
+.scan-progress{display:flex;flex-direction:column;gap:12px;padding:8px 0;}
+.sp-row{display:flex;align-items:center;gap:10px;}
+.sp-ico{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
+.sp-ico.done{background:var(--Pl);}
+.sp-ico.active{background:var(--bg);animation:spPulse 1s infinite;}
+.sp-ico.wait{background:var(--bg);opacity:.5;}
+@keyframes spPulse{0%,100%{opacity:.5;}50%{opacity:1;}}
+.sp-lbl{font-size:13px;font-weight:500;}
+.sp-lbl.done{color:var(--P);}
+.sp-lbl.active{color:var(--T);}
+.sp-lbl.wait{color:var(--T3);}
+.txn-review{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid rgba(0,0,0,.05);}
+.txn-review:last-child{border-bottom:none;}
+.txn-review .cat-sel{padding:4px 8px;border-radius:6px;font-size:12px;font-family:var(--f);border:1px solid var(--T3);background:var(--bg);color:var(--T);}
+.result-banner{border-radius:var(--rs);padding:14px 16px;margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+.result-banner.success{background:var(--Pl);border:1.5px solid var(--P);}
+.result-banner.warn{background:var(--amber-l,#FFFBEB);border:1.5px solid var(--A);}
+.cost-chip{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;background:var(--bg);border-radius:20px;font-size:11px;color:var(--T2);border:1px solid var(--T3);margin-top:8px;}
+
+
+/* ── FAST ADD MODAL ─────────────────────────── */
+.fa-amount-display{
+  font-size:52px;font-weight:800;letter-spacing:-2px;
+  color:var(--T);text-align:center;
+  padding:20px 16px 8px;min-height:80px;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;
+}
+.fa-amount-display .currency{font-size:28px;font-weight:500;color:var(--T2);margin-right:4px;align-self:flex-start;margin-top:12px;}
+.fa-amount-display .amount-val{color:var(--T);}
+.fa-amount-display .amount-val.has-value{color:var(--T);}
+.fa-amount-display .cursor{display:inline-block;width:2px;height:44px;background:var(--P);animation:blink .9s infinite;margin-left:2px;vertical-align:middle;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0;}}
+.fa-cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:0 16px 16px;}
+.fa-cat-btn{
+  display:flex;flex-direction:column;align-items:center;gap:4px;
+  padding:10px 6px;border-radius:12px;cursor:pointer;
+  border:1.5px solid transparent;background:var(--bg);
+  transition:all .15s;
+}
+.fa-cat-btn:active{transform:scale(.95);}
+.fa-cat-btn.selected{background:var(--Pl);border-color:var(--P);}
+.fa-cat-ico{font-size:20px;}
+.fa-cat-lbl{font-size:10px;font-weight:600;color:var(--T2);}
+.fa-cat-btn.selected .fa-cat-lbl{color:var(--Pd);}
+.numpad{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;padding:0 16px;}
+.np-btn{
+  height:58px;display:flex;align-items:center;justify-content:center;
+  font-size:22px;font-weight:600;border-radius:12px;cursor:pointer;
+  background:var(--bg);color:var(--T);border:none;font-family:var(--f);
+  transition:all .12s;
+}
+.np-btn:active{background:var(--T3);transform:scale(.95);}
+.np-btn.np-zero{grid-column:span 2;}
+.np-btn.np-del{background:var(--bg);font-size:18px;}
+.np-btn.np-special{color:var(--T2);font-size:16px;}
+.fa-footer{padding:12px 16px 8px;display:flex;gap:10px;}
+.fa-desc-row{padding:0 16px 10px;}
+.fa-desc-inp{width:100%;padding:10px 14px;background:var(--bg);border:1.5px solid transparent;border-radius:var(--rx);font-size:14px;font-family:var(--f);color:var(--T2);}
+.fa-desc-inp:focus{outline:none;border-color:var(--P);color:var(--T);}
+.fa-divider{border:none;border-top:1px solid var(--bg);margin:8px 0;}
+.fa-more-toggle{text-align:center;padding:4px 0 8px;font-size:12px;font-weight:600;color:var(--P);cursor:pointer;}
+
+/* ── CONFIRM MODAL (para Shortcut) ─────────────── */
+.confirm-modal{text-align:center;}
+.cm-amount{font-size:48px;font-weight:800;letter-spacing:-2px;color:var(--R);margin:16px 0 8px;}
+.cm-cat{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;background:var(--bg);border-radius:20px;font-size:14px;font-weight:600;margin-bottom:20px;}
+
 </style>
 
   <!-- PWA Meta Tags -->
@@ -551,11 +629,92 @@ body{display:flex;justify-content:center;min-height:100vh;}
 
 <!-- ===== MODALS ===== -->
 <div class="mo" id="em" onclick="mcl(event,'em')">
-  <div class="ms"><div class="mh"></div><div class="mt">Agregar gasto</div>
-    <div class="iw"><label class="il">Descripción</label><input class="inp" type="text" id="ed" placeholder="Ej: Supermercado Walmart"></div>
-    <div class="irow"><div class="iw"><label class="il">Monto ($)</label><input class="inp" type="number" id="ea" placeholder="0.00"></div><div class="iw"><label class="il">Categoría</label><select class="inp" id="ec"><option value="Alimentación">🍔 Alimentación</option><option value="Transporte">🚗 Transporte</option><option value="Vivienda">🏠 Vivienda</option><option value="Salud">💊 Salud</option><option value="Entretenimiento">🎬 Entretenimiento</option><option value="Ropa">👕 Ropa</option><option value="Educación">📚 Educación</option><option value="Otros">📦 Otros</option></select></div></div>
-    <div class="iw"><label class="il">Fecha</label><input class="inp" type="date" id="edt"></div>
-    <button class="pill pp" style="width:100%;justify-content:center;" onclick="transactionService.addExpense()">Guardar gasto</button>
+  <div class="ms" style="padding:0 0 32px;">
+    <div class="mh" style="margin:16px auto 0;"></div>
+
+    <!-- Amount display -->
+    <div class="fa-amount-display">
+      <span class="currency">$</span>
+      <span class="amount-val" id="fa-display">0</span>
+      <span class="cursor"></span>
+    </div>
+
+    <!-- Category grid -->
+    <div class="fa-cat-grid" id="fa-cats">
+      <div class="fa-cat-btn selected" data-cat="Alimentación" onclick="faSelectCat(this)">
+        <span class="fa-cat-ico">🍔</span><span class="fa-cat-lbl">Comida</span>
+      </div>
+      <div class="fa-cat-btn" data-cat="Transporte" onclick="faSelectCat(this)">
+        <span class="fa-cat-ico">🚗</span><span class="fa-cat-lbl">Transporte</span>
+      </div>
+      <div class="fa-cat-btn" data-cat="Entretenimiento" onclick="faSelectCat(this)">
+        <span class="fa-cat-ico">🎬</span><span class="fa-cat-lbl">Ocio</span>
+      </div>
+      <div class="fa-cat-btn" data-cat="Vivienda" onclick="faSelectCat(this)">
+        <span class="fa-cat-ico">🏠</span><span class="fa-cat-lbl">Vivienda</span>
+      </div>
+      <div class="fa-cat-btn" data-cat="Salud" onclick="faSelectCat(this)">
+        <span class="fa-cat-ico">💊</span><span class="fa-cat-lbl">Salud</span>
+      </div>
+      <div class="fa-cat-btn" data-cat="Ropa" onclick="faSelectCat(this)">
+        <span class="fa-cat-ico">👕</span><span class="fa-cat-lbl">Ropa</span>
+      </div>
+      <div class="fa-cat-btn" data-cat="Educación" onclick="faSelectCat(this)">
+        <span class="fa-cat-ico">📚</span><span class="fa-cat-lbl">Educación</span>
+      </div>
+      <div class="fa-cat-btn" data-cat="Otros" onclick="faSelectCat(this)">
+        <span class="fa-cat-ico">📦</span><span class="fa-cat-lbl">Otros</span>
+      </div>
+    </div>
+
+    <hr class="fa-divider">
+
+    <!-- Optional description -->
+    <div class="fa-desc-row">
+      <input class="fa-desc-inp" type="text" id="fa-desc" placeholder="+ Descripción (opcional)">
+    </div>
+
+    <!-- Numpad -->
+    <div class="numpad">
+      <button class="np-btn" onclick="faTap('1')">1</button>
+      <button class="np-btn" onclick="faTap('2')">2</button>
+      <button class="np-btn" onclick="faTap('3')">3</button>
+      <button class="np-btn" onclick="faTap('4')">4</button>
+      <button class="np-btn" onclick="faTap('5')">5</button>
+      <button class="np-btn" onclick="faTap('6')">6</button>
+      <button class="np-btn" onclick="faTap('7')">7</button>
+      <button class="np-btn" onclick="faTap('8')">8</button>
+      <button class="np-btn" onclick="faTap('9')">9</button>
+      <button class="np-btn np-special" onclick="faTap('.')">.</button>
+      <button class="np-btn np-zero" onclick="faTap('0')">0</button>
+      <button class="np-btn np-del" onclick="faDel()">⌫</button>
+    </div>
+
+    <!-- Action buttons -->
+    <div class="fa-footer">
+      <button class="pill pg" style="flex:1;justify-content:center;" onclick="closeM('em')">Cancelar</button>
+      <button class="pill pp" style="flex:2;justify-content:center;" onclick="faSave()">
+        Guardar gasto
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- QUICK CONFIRM MODAL (para iOS Shortcut) -->
+<div class="mo" id="qc-modal" onclick="mcl(event,'qc-modal')">
+  <div class="ms confirm-modal">
+    <div class="mh"></div>
+    <div style="font-size:13px;font-weight:700;color:var(--T2);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">Confirmar gasto</div>
+    <div class="cm-amount" id="qc-amount">$0</div>
+    <div class="cm-cat">
+      <span id="qc-cat-ico">🍔</span>
+      <span id="qc-cat-name">Alimentación</span>
+    </div>
+    <div style="font-size:13px;color:var(--T2);margin-bottom:20px;">Hoy · <span id="qc-date-label"></span></div>
+    <div style="display:flex;gap:10px;">
+      <button class="pill pg" style="flex:1;justify-content:center;" onclick="closeM('qc-modal')">Cancelar</button>
+      <button class="pill pp" style="flex:2;justify-content:center;" onclick="qcConfirm()">✅ Confirmar</button>
+    </div>
   </div>
 </div>
 <div class="mo" id="gm" onclick="mcl(event,'gm')">
@@ -591,7 +750,7 @@ body{display:flex;justify-content:center;min-height:100vh;}
   <div class="ms" style="max-height:92vh;">
     <div class="mh"></div>
     <div class="rwb" style="margin-bottom:18px;">
-      <div class="mt" style="margin-bottom:0;">Importar estado de cuenta</div>
+      <div class="mt" style="margin-bottom:0;">Importar movimientos</div>
       <button onclick="closeM('stmt-modal')" style="background:none;border:none;font-size:20px;color:var(--T3);cursor:pointer;">✕</button>
     </div>
     <!-- Step bar -->
@@ -794,6 +953,90 @@ const insightService = {
   },
 };
 
+
+// =======================================================
+// SERVICE: imageAnalysisService — NUEVA FUNCIONALIDAD
+// Analiza imágenes con Claude Vision API
+// =======================================================
+const imageAnalysisService = {
+  
+  async analyzeImage(base64Data, mediaType) {
+    const prompt = `Eres un extractor de transacciones financieras. Analiza esta imagen y extrae TODOS los movimientos, gastos, cargos o transacciones que veas.
+
+Para cada transacción devuelve un objeto JSON con:
+- desc: descripción breve del gasto (máximo 30 caracteres)
+- amount: monto como número positivo (sin signos, sin moneda)  
+- date: fecha en formato YYYY-MM-DD (si no hay fecha usa 2025-05-20)
+- cat: UNA de estas categorías exactas: Alimentación, Transporte, Vivienda, Salud, Entretenimiento, Ropa, Educación, Otros
+
+Clasifica inteligentemente: restaurantes→Alimentación, gasolina/uber→Transporte, renta/luz/agua→Vivienda, etc.
+
+Responde ÚNICAMENTE con un JSON array válido, sin texto adicional, sin markdown, sin explicaciones:
+[{"desc":"...","amount":0,"date":"2025-05-20","cat":"Otros"}]
+
+Si no encuentras transacciones claras, responde exactamente: []`;
+
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 2000,
+        messages: [{
+          role: 'user',
+          content: [
+            {
+              type: 'image',
+              source: { type: 'base64', media_type: mediaType, data: base64Data }
+            },
+            { type: 'text', text: prompt }
+          ]
+        }]
+      })
+    });
+
+    if (!response.ok) {
+      const err = await response.json().catch(() => ({}));
+      throw new Error(err.error?.message || 'Error al analizar la imagen');
+    }
+
+    const data = await response.json();
+    const text = data.content.map(b => b.text || '').join('').trim();
+    
+    // Clean up response
+    const clean = text.replace(/```json/g,'').replace(/```/g,'').trim();
+    
+    try {
+      const parsed = JSON.parse(clean);
+      return Array.isArray(parsed) ? parsed : [];
+    } catch {
+      // Try to extract JSON array from response
+      const match = clean.match(/\[.*\]/s);
+      if (match) {
+        try { return JSON.parse(match[0]); } catch {}
+      }
+      return [];
+    }
+  },
+
+  fileToBase64(file) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        // Extract just the base64 part (remove data:image/...;base64,)
+        const result = reader.result;
+        const base64 = result.split(',')[1];
+        resolve(base64);
+      };
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
+  }
+};
+
+// =======================================================
+// ENHANCED statementImportService
+// =======================================================
 // =======================================================
 // SERVICE: statementImportService  ← MOCK, listo para backend
 // =======================================================
@@ -1237,19 +1480,7 @@ function openM(id) {
   if(id==='stmt-modal') initImport();
 }
 
-function initImport() {
-  DS.stmtStep=0; stmtTxns=[];
-  updateStepBar(0);
-  renderImportStep(0);
-}
-
-function updateStepBar(active) {
-  for(let i=0;i<5;i++){
-    const d=$(`sd${i}`),l=$(`sl${i}`);
-    if(d){d.className='step-dot '+(i<active?'done':i===active?'active':'wait');d.textContent=i<active?'✓':(i+1);}
-    if(l) l.className='step-line'+(i<active?' done':'');
-  }
-}
+// initImport + updateStepBar moved above openM
 
 function renderImportStep(step) {
   const c=$('stmt-content'); if(!c) return;
@@ -1423,6 +1654,229 @@ function dismissIOSGuide() {
   const g = document.getElementById('ios-guide');
   if (g) { g.style.animation = 'none'; g.style.transform = 'translateY(100%)'; g.style.transition = 'transform .3s ease'; setTimeout(() => g.remove(), 300); }
 }
+
+// ── Image Import State ──────────────────────────────────
+let imgImportFile = null;
+let imgImportMode = 'file';
+
+function selectMode(mode) {
+  imgImportMode = mode;
+  renderImportStep(0);
+}
+
+function handleImgFile(file) {
+  if(!file) return;
+  imgImportFile = file;
+  renderImportStep(1);
+  processImageWithAI(file);
+}
+
+function handleImgDrop(e) {
+  e.preventDefault();
+  const dz = $('dz');
+  if(dz) dz.classList.remove('drag');
+  const f = e.dataTransfer.files[0];
+  if(f && f.type.startsWith('image/')) handleImgFile(f);
+}
+
+async function processImageWithAI(file) {
+  try {
+    let mediaType = file.type || 'image/jpeg';
+    if(mediaType === 'image/heic' || mediaType === 'image/heif') mediaType = 'image/jpeg';
+    const base64 = await imageAnalysisService.fileToBase64(file);
+
+    // Animate progress steps
+    setTimeout(() => {
+      const rows = document.querySelectorAll('.sp-row');
+      if(rows[1]) {
+        rows[1].querySelector('.sp-ico').className = 'sp-ico done';
+        rows[1].querySelector('.sp-ico').textContent = '✓';
+        rows[1].querySelector('.sp-lbl').className = 'sp-lbl done';
+      }
+      if(rows[2]) {
+        rows[2].querySelector('.sp-ico').className = 'sp-ico active';
+        rows[2].querySelector('.sp-lbl').className = 'sp-lbl active';
+      }
+    }, 600);
+
+    const transactions = await imageAnalysisService.analyzeImage(base64, mediaType);
+
+    stmtTxns = (transactions || [])
+      .map((t, i) => ({
+        id: Date.now() + i,
+        desc: (t.desc || 'Sin descripción').substring(0, 40),
+        amount: Math.abs(parseFloat(t.amount) || 0),
+        cat: Object.keys(CATCOL).includes(t.cat) ? t.cat : 'Otros',
+        date: t.date || new Date().toISOString().slice(0, 10),
+      }))
+      .filter(t => t.amount > 0);
+
+    renderImportStep(2);
+
+  } catch(err) {
+    const c = $('stmt-content');
+    if(c) c.innerHTML = `
+      <div style="text-align:center;padding:30px 20px;">
+        <div style="font-size:36px;margin-bottom:12px;">⚠️</div>
+        <div style="font-size:15px;font-weight:700;margin-bottom:8px;">No se pudo analizar</div>
+        <div style="font-size:13px;color:var(--T2);margin-bottom:20px;">${err.message}</div>
+        <button class="pill pp pill-sm" onclick="renderImportStep(0)">← Intentar de nuevo</button>
+      </div>`;
+  }
+}
+
+
+// ══════════════════════════════════════════════════════
+// FAST ADD — Gasto rápido con teclado numérico
+// ══════════════════════════════════════════════════════
+let faAmount = '';
+let faCat = 'Alimentación';
+
+function faTap(key) {
+  if(key === '.' && faAmount.includes('.')) return;
+  if(faAmount.length >= 8) return;
+  if(key === '.' && faAmount === '') faAmount = '0';
+  faAmount += key;
+  faUpdateDisplay();
+}
+
+function faDel() {
+  faAmount = faAmount.slice(0, -1);
+  faUpdateDisplay();
+}
+
+function faUpdateDisplay() {
+  const el = $('fa-display');
+  if(!el) return;
+  el.textContent = faAmount || '0';
+  el.style.color = faAmount && parseFloat(faAmount) > 0 ? 'var(--T)' : 'var(--T3)';
+}
+
+function faSelectCat(el) {
+  document.querySelectorAll('.fa-cat-btn').forEach(b => b.classList.remove('selected'));
+  el.classList.add('selected');
+  faCat = el.dataset.cat;
+}
+
+function faReset() {
+  faAmount = '';
+  faCat = 'Alimentación';
+  const desc = $('fa-desc');
+  if(desc) desc.value = '';
+  document.querySelectorAll('.fa-cat-btn').forEach((b,i) => {
+    b.classList.toggle('selected', i === 0);
+  });
+  faUpdateDisplay();
+}
+
+function faSave() {
+  const amount = parseFloat(faAmount);
+  if(!amount || amount <= 0) {
+    // Shake animation
+    const disp = $('fa-display');
+    if(disp) { disp.style.color='var(--R)'; setTimeout(()=>disp.style.color='',600); }
+    return;
+  }
+  const desc = $('fa-desc')?.value.trim() || faCat;
+  const today = new Date().toISOString().slice(0,10);
+  DS.expenses.unshift({ id: Date.now(), desc: desc || faCat, amount, cat: faCat, date: today });
+  closeM('em');
+  faReset();
+  renderActive();
+  // Brief success feedback
+  showToast(`✅ $${amount.toLocaleString('es-MX')} en ${faCat}`);
+}
+
+// Override openM to reset fast-add on open
+const _origOpenM = openM;
+window.openM = function(id) {
+  _origOpenM(id);
+  if(id === 'em') { faReset(); }
+};
+
+// ══════════════════════════════════════════════════════
+// TOAST NOTIFICATION
+// ══════════════════════════════════════════════════════
+function showToast(msg, duration=2400) {
+  let t = document.getElementById('ff-toast');
+  if(!t) {
+    t = document.createElement('div');
+    t.id = 'ff-toast';
+    t.style.cssText = `
+      position:fixed;bottom:calc(var(--nh) + 16px);left:50%;transform:translateX(-50%) translateY(20px);
+      background:#111827;color:#fff;padding:12px 20px;border-radius:20px;
+      font-size:14px;font-weight:600;font-family:var(--f);
+      box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:500;
+      opacity:0;transition:all .25s cubic-bezier(.4,0,.2,1);
+      white-space:nowrap;max-width:90vw;
+    `;
+    document.querySelector('.shell').appendChild(t);
+  }
+  t.textContent = msg;
+  requestAnimationFrame(() => {
+    t.style.opacity = '1';
+    t.style.transform = 'translateX(-50%) translateY(0)';
+  });
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => {
+    t.style.opacity = '0';
+    t.style.transform = 'translateX(-50%) translateY(20px)';
+  }, duration);
+}
+
+// ══════════════════════════════════════════════════════
+// URL PARAMETER HANDLING — Habilita iOS Shortcuts
+// ══════════════════════════════════════════════════════
+// iOS Shortcut abre: https://flowfinance-six.vercel.app/?ff_amount=450&ff_cat=Alimentación&ff_auto=1
+function handleURLParams() {
+  const params = new URLSearchParams(window.location.search);
+  const amount = params.get('ff_amount');
+  const cat = params.get('ff_cat');
+  const auto = params.get('ff_auto');
+
+  if(amount && parseFloat(amount) > 0) {
+    const today = new Date();
+    const dateStr = today.toLocaleDateString('es-MX', {weekday:'short', day:'numeric', month:'short'});
+    
+    // Show quick confirm modal
+    setTimeout(() => {
+      const catName = cat || 'Otros';
+      const validCat = Object.keys(CATCOL).includes(catName) ? catName : 'Otros';
+      
+      set('qc-amount', '$' + parseFloat(amount).toLocaleString('es-MX'));
+      set('qc-cat-ico', CATEMO[validCat] || '📦');
+      set('qc-cat-name', validCat);
+      set('qc-date-label', dateStr);
+      
+      // Store for confirm
+      window._qcPending = { amount: parseFloat(amount), cat: validCat };
+      openM('qc-modal');
+      
+      // Clean URL
+      window.history.replaceState({}, '', '/');
+    }, 500);
+  }
+}
+
+function qcConfirm() {
+  if(!window._qcPending) return;
+  const { amount, cat } = window._qcPending;
+  DS.expenses.unshift({
+    id: Date.now(),
+    desc: cat,
+    amount,
+    cat,
+    date: new Date().toISOString().slice(0,10)
+  });
+  closeM('qc-modal');
+  window._qcPending = null;
+  renderActive();
+  showToast(`✅ $${amount.toLocaleString('es-MX')} en ${cat} registrado`);
+}
+
+// Run on load
+window.addEventListener('DOMContentLoaded', handleURLParams);
+
 </script>
 </body>
 </html>
